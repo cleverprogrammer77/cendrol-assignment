@@ -5,7 +5,7 @@ const JokesShow = ({ category }) => {
   const [showJoke, setShowJoke] = useState(true);
   const fetchAnotherJoke = async () => {
     try {
-      const response = await fetch("https://api.chucknorris.io/jokes/random");
+      const response = await fetch(`https://api.chucknorris.io/jokes/random?category=${category}`);
       const data = await response.json();
       console.log(data);
       setJoke(data.value);
